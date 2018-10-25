@@ -1,0 +1,57 @@
+[
+  {
+    "id": "root",
+    "type": "NIN.RootNode",
+    "connected": {
+      "screen": "sceneSwitcherNode.render"
+    }
+  },
+  {
+    "id": "sceneSwitcherNode",
+    "type": "SceneSwitcherNode",
+    "connected": {
+      "A": "cubes.render",
+      "B": "ballshader.render",
+      "C": "sky.render",
+      "D": "tunnelcanvas.render",
+      "E": "dancing.render"
+    }
+  },
+  {
+    "id": "SpinningCube",
+    "type": "spinningCube"
+  },
+  {
+    "id": "cubes",
+    "type": "cubes",
+    "connected": {
+      "bg": "tunnel.render"
+    }
+  },
+  {
+    "id": "tunnel",
+    "type": "tunnelNode",
+    "options": {
+      "shader": "tunnel"
+    }
+  },
+  {
+    "id": "ballshader",
+    "type": "ballshaderNode",
+    "options": {
+      "shader": "ballshader"
+    }
+  },
+  {
+    "id": "sky",
+    "type": "sky"
+  },
+  {
+    "id": "tunnelcanvas",
+    "type": "tunnelcanvas"
+  },
+  {
+    "id": "dancing",
+    "type": "dancing"
+  }
+]

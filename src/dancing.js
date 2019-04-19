@@ -114,7 +114,7 @@
       this.ctx.stroke();
     }
 
-    frontRight(X1, Y1) {
+    frontRight(X1, Y1, headx, heady) {
       this.ctx.beginPath();
       this.ctx.moveTo(X1, Y1);
       this.ctx.lineTo(X1, Y1 + 10);
@@ -153,8 +153,12 @@
       const shadow = 'rgba(255, 255, 255, 0)';
       const X1 = 300;
       const Y1 = 100;
+      const headx = 300;
+      const heady = 60;
+      const headr = 40;
 
       this.ctx.strokeStyle = '#ff80df';
+      this.ctx.fillStyle = '#ff80df';
 
       this.ctx.lineWidth = 5;
       this.ctx.shadowBlur = 20;
@@ -164,6 +168,16 @@
       this.ctx.beginPath();
       this.ctx.arc(300,60,40,0,2*Math.PI);
       this.ctx.stroke();
+      this.ctx.beginPath();
+      this.ctx.moveTo(headx-15, heady+10);
+      this.ctx.lineTo(headx, heady+25);
+      this.ctx.lineTo(headx+15, heady+10);
+      this.ctx.lineTo(headx-15, heady+10);
+      this.ctx.stroke();
+      this.ctx.beginPath();
+      this.ctx.arc(headx-15,heady-15,5,0,2*Math.PI);
+      this.ctx.arc(headx+15,heady-15,5,0,2*Math.PI);
+      this.ctx.fill();
 
       if (BEAN % 24 < 4) {
         this.frontLeft(X1, Y1);
@@ -172,20 +186,31 @@
       } else if (BEAN % 24 >= 8 && BEAN % 24 < 12) {
         this.frontLeft(X1, Y1);
       } else if (BEAN % 24 >= 12 && BEAN % 24 < 16) {
-        this.frontRight(X1, Y1);
+        this.frontRight(X1, Y1, headx, heady);
       } else if (BEAN % 24 >= 16 && BEAN % 24 < 20) {
         this.backRight(X1, Y1);
       } else {
-        this.frontRight(X1, Y1);
+        this.frontRight(X1, Y1, headx, heady);
       }
 
       this.ctx.strokeStyle = '#ffffff';
+      this.ctx.fillStyle = '#ffffff';
 
       this.ctx.lineWidth = 2;
       this.shadowBlur = 0;
       this.ctx.beginPath();
       this.ctx.arc(300,60,40,0,2*Math.PI);
       this.ctx.stroke();
+      this.ctx.beginPath();
+      this.ctx.moveTo(headx-15, heady+10);
+      this.ctx.lineTo(headx, heady+25);
+      this.ctx.lineTo(headx+15, heady+10);
+      this.ctx.lineTo(headx-15, heady+10);
+      this.ctx.stroke();
+      this.ctx.beginPath();
+      this.ctx.arc(headx-15,heady-15,4,0,2*Math.PI);
+      this.ctx.arc(headx+15,heady-15,4,0,2*Math.PI);
+      this.ctx.fill();
 
       if (BEAN % 24 < 4) {
         this.frontLeft(X1, Y1);
@@ -194,11 +219,11 @@
       } else if (BEAN % 24 >= 8 && BEAN % 24 < 12) {
         this.frontLeft(X1, Y1);
       } else if (BEAN % 24 >= 12 && BEAN % 24 < 16) {
-        this.frontRight(X1, Y1);
+        this.frontRight(X1, Y1, headx, heady);
       } else if (BEAN % 24 >= 16 && BEAN % 24 < 20) {
         this.backRight(X1, Y1);
       } else {
-        this.frontRight(X1, Y1);
+        this.frontRight(X1, Y1, headx, heady);
       }
     }
   }

@@ -14,7 +14,10 @@
       "B": "ballshader.render",
       "C": "sky.render",
       "D": "tunnelcanvas.render",
-      "E": "dancing.render"
+      "E": "dancing.render",
+      "F": "planet.render",
+      "G": "test.render",
+      "H": "clock.render"
     }
   },
   {
@@ -53,5 +56,23 @@
   {
     "id": "dancing",
     "type": "dancing"
+  },
+  {
+    "id": "planet",
+    "type": "planet"
+  },
+  {
+    "id": "test",
+    "type": "testNode",
+    "options": {
+      "shader": "test"
+    }
+  },
+  {
+    "id": "clock",
+    "type": "clockNode",
+    "options": {
+      "shader": "clock"
+    }
   }
 ]

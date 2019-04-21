@@ -24,21 +24,25 @@ void main() {
   vec2 uv = vUv;
   uv -= vec2(.5,.5);
   uv /= vec2(9./16., 1.)*.5;
+
+  float pi = 3.1415926;
+  float tau = 2.*pi;
   float r = length(uv);
   float a = atan(uv.y, uv.x)+3.1415926;
-  vec3 col = vec3(.2,.2,.2)+.1*uv.y;
-  col = mix(col, vec3(.9-.4*pow(r,4.)), 1.-smoothstep(.94,.95,r));
+
+  vec3 col = vec3(.0,.0,.0)+.1*uv.y;
+  col = mix(col, vec3(.6-.4*pow(r,4.)), 1.-smoothstep(.94,.95,r));
   
-  vec2 dir = vec2(sin(6.2831*frame), cos(6.2831*frame));
+  vec2 dir = vec2(sin(tau*frame/60.), cos(tau*frame/60.));
   col = line(col, vec2(.0), dir*.9, uv+.05, vec2(0.005,4.), vec4(.0,.0,.0,.2));
   col = line(col, vec2(.0), dir*0., uv+.05, vec2(0.055,4.), vec4(.0,.0,.0,.2));
   col = line(col, vec2(.0), dir*.9, uv, vec2(0.005,1.), vec4(.5,.0,.0,1.));
 
-  dir = vec2(sin(6.2831*frame/60.), cos(6.2831*frame/60.));
+  dir = vec2(sin(6.2831*frame/60./60.), cos(6.2831*frame/60./60.));
   col = line(col, vec2(.0), dir*.7, uv+.05, vec2(0.015,4.), vec4(.0,.0,.0,.2));
   col = line(col, vec2(.0), dir*.7, uv, vec2(0.015,1.), vec4(.0,.0,.0,1.));
 
-  dir = vec2(sin(6.2831*frame/60./12.), cos(6.2831*frame/60./12.));
+  dir = vec2(sin(6.2831*frame/60./60./12.), cos(6.2831*frame/60./60./12.));
   col = line(col, vec2(.0), dir*.4, uv+.05, vec2(0.015,4.), vec4(.0,.0,.0,.2));
   col = line(col, vec2(.0), dir*.4, uv, vec2(0.015,1.), vec4(.0,.0,.0,1.));
 

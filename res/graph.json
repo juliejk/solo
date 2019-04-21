@@ -17,7 +17,8 @@
       "E": "dancing.render",
       "F": "planet.render",
       "G": "test.render",
-      "H": "clock.render"
+      "H": "clock.render",
+      "I": "fancy.render"
     }
   },
   {
@@ -73,6 +74,13 @@
     "type": "clockNode",
     "options": {
       "shader": "clock"
+    }
+  },
+  {
+    "id": "fancy",
+    "type": "fancyNode",
+    "options": {
+      "shader": "fancy"
     }
   }
 ]
